@@ -1,0 +1,96 @@
+
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Baitoey Phone - ร้านโทรศัพท์</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Quicksand:wght@600;700&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config={theme:{extend:{colors:{primary:'#82505b','primary-container':'#f4b5c1','surface':'#fcf9f8','surface-container-low':'#f6f3f2','surface-container-high':'#eae7e7','surface-container-highest':'#e4e2e1','on-surface':'#1b1c1c','on-surface-variant':'#514346','secondary':'#7c5730','secondary-container':'#fdcb9b','outline-variant':'#d5c2c4'},fontFamily:{headline:['Quicksand'],body:['Nunito Sans']}}}}
+</script>
+<style>
+body{background:#fcf9f8}.glass{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}.card{box-shadow:0 8px 20px rgba(124,87,48,.05);transition:.25s}.card:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(124,87,48,.10)}.selected{outline:2px solid #82505b;outline-offset:2px}.drawer{transition:transform .3s ease}.toast{animation:toast .25s ease}@keyframes toast{from{transform:translateY(15px);opacity:0}to{transform:translateY(0);opacity:1}}
+</style>
+</head>
+<body class="text-on-surface font-body antialiased min-h-screen pt-16 pb-20 md:pb-0">
+
+<header class="fixed top-0 z-50 w-full h-16 glass bg-surface/90 shadow-sm flex items-center justify-between px-5 md:px-10">
+
+    <a href="#home" class="font-headline text-xl font-bold text-primary">Baitoey Phone</a>
+
+    <nav class="hidden md:flex gap-8 text-sm font-bold">
+        <a href="index.html">หน้าแรก</a>
+        <a href="product.html">สินค้า</a>
+        <a <a href="contact-page.html">ติดต่อ</a>
+    </nav>
+
+    <button onclick="openCart()" class="relative text-primary hover:scale-105 transition" aria-label="เปิดตะกร้าสินค้า">
+        <span class="material-symbols-outlined">shopping_cart</span>
+        <span id="cartCount" class="absolute -top-2 -right-2 bg-primary text-white text-xs rounded-full px-1">0</span>
+    </button>
+
+</header>
+    <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">เลือก iPhone รุ่นที่ชอบ พร้อมเลือกสีและความจุได้ตามต้องการ สั่งซื้อได้ง่ายผ่านตะกร้าสินค้า</p>
+  </section>
+
+  <section id="products" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+    <article class="card bg-white rounded-2xl p-5 flex flex-col" data-product="iPhone 18" data-price="32900">
+      <div class="aspect-[4/5] bg-surface-container-low rounded-xl flex items-center justify-center overflow-hidden relative mb-5">
+        <span class="absolute top-4 left-4 bg-secondary/10 text-secondary font-bold px-3 py-1 rounded-full">ใหม่</span>
+        <img alt="iPhone 18" class="object-contain w-4/5 h-4/5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT0UUOlAAdIDbAGwoJMOnpHqrygCGHSA-AlW76wooZxsW7IAVNSJkoD8UxSMYHfmj772JUOauZ0EFuCVIv3A_UN7WxWMHzNOiOBaEeRBog1p5JuWiU01kOMkzGjP-DGkW3eqfIvk0yDndl_OnkNd20FNy66AX2QbvFQfm16-G_rXME3dz8P3KhVJIQv1llBrNRlcVVVj8eRJOvM6FrRo5v0oIijXYKjyXm0tDzinXAZlXFjab7HvpsQA"/>
+      </div><h2 class="font-headline text-2xl font-bold">iPhone 18</h2><p class="text-primary text-xl font-bold my-3">฿32,900</p>
+      <div class="mb-4"><span class="block text-sm font-bold mb-2">สี</span><div class="flex gap-3 colors">
+        <button type="button" data-color="ชมพู" class="color w-8 h-8 rounded-full bg-primary-container selected" aria-label="สีชมพู"></button><button type="button" data-color="น้ำตาล" class="color w-8 h-8 rounded-full bg-secondary-container" aria-label="สีน้ำตาล"></button><button type="button" data-color="ครีม" class="color w-8 h-8 rounded-full bg-surface-container-highest border" aria-label="สีครีม"></button>
+      </div></div>
+      <div class="mb-5"><span class="block text-sm font-bold mb-2">ความจุ</span><div class="flex gap-2 flex-wrap storage"><button type="button" data-storage="128GB" class="storage-btn px-4 py-2 rounded-full bg-surface-container-high border border-primary selected">128GB</button><button type="button" data-storage="256GB" class="storage-btn px-4 py-2 rounded-full bg-surface-container-high">256GB</button><button type="button" data-storage="512GB" class="storage-btn px-4 py-2 rounded-full bg-surface-container-high">512GB</button></div></div>
+      <button onclick="addFromCard(this)" class="mt-auto w-full bg-primary text-white font-bold py-4 rounded-full hover:opacity-90 active:scale-95 transition">ซื้อเลย</button>
+    </article>
+
+    <article class="card bg-white rounded-2xl p-5 flex flex-col" data-product="iPhone 18 Pro" data-price="42900">
+      <div class="aspect-[4/5] bg-surface-container-low rounded-xl flex items-center justify-center overflow-hidden mb-5"><img alt="iPhone 18 Pro" class="object-contain w-4/5 h-4/5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnT2vpj6VcrTxHGIKsQ-cS7nLfuYGVOCOKdE0Jh9rPE6AAMoJSj65NQsxtbL3oYiv8boyDPgdHbDPz9pvei3EvPOdOGCY25XXcUTKEPx4ULMUO9BPOskBMd0wy3-sqvWs-O7c9jNbNKbHepqPQVZVVPQQ0B6ulVS8JPsBUOxqTNnMyPc3hyeWIKB06JywI1NEzPRAlSf6CIbVnZwofdb-OeTXxfimZ20dvQFdvCFQP0z4pCiAqzvCPAg"/></div>
+      <h2 class="font-headline text-2xl font-bold">iPhone 18 Pro</h2><p class="text-primary text-xl font-bold my-3">฿42,900</p>
+      <div class="mb-4"><span class="block text-sm font-bold mb-2">สี</span><div class="flex gap-3 colors"><button type="button" data-color="ชมพู" class="color w-8 h-8 rounded-full bg-primary-container" aria-label="สีชมพู"></button><button type="button" data-color="น้ำตาล" class="color w-8 h-8 rounded-full bg-secondary-container selected" aria-label="สีน้ำตาล"></button><button type="button" data-color="ครีม" class="color w-8 h-8 rounded-full bg-surface-container-highest border" aria-label="สีครีม"></button></div></div>
+      <div class="mb-5"><span class="block text-sm font-bold mb-2">ความจุ</span><div class="flex gap-2 flex-wrap storage"><button type="button" data-storage="128GB" class="storage-btn px-4 py-2 rounded-full bg-surface-container-high">128GB</button><button type="button" data-storage="256GB" class="storage-btn px-4 py-2 rounded-full bg-surface-container-high border border-primary selected">256GB</button><button type="button" data-storage="512GB" class="storage-btn px-4 py-2 rounded-full bg-surface-container-high">512GB</button></div></div>
+      <button onclick="addFromCard(this)" class="mt-auto w-full bg-primary text-white font-bold py-4 rounded-full hover:opacity-90 active:scale-95 transition">ซื้อเลย</button>
+    </article>
+
+    <article class="card bg-white rounded-2xl p-5 flex flex-col" data-product="iPhone 18 Pro Max" data-price="48900">
+      <div class="aspect-[4/5] bg-surface-container-low rounded-xl flex items-center justify-center overflow-hidden mb-5"><img alt="iPhone 18 Pro Max" class="object-contain w-4/5 h-4/5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRXJr4tykZ72a1tsDP0PSOOFa8gvI6JMOqS69yull_LXkWTbEgcYjq2GRjMXwMvBxlJ3NKJb-1GO0wn1fhdr7tGT2RAiEHstsyoHLSuxQXQVikWBebPMSkwHTeiFe5o4zRXPEZnHSezvbraNSX43-LgW6arsE-tKHf32r6ZowTj0iesH6wT39ce8Aw2dBaffkOtyCM-ml4yW4queWTs_gJmMaoxQbVzrLr7Xelg_OWq9xIq1XQJfpw0g"/></div>
+      <h2 class="font-headline text-2xl font-bold">iPhone 18 Pro Max</h2><p class="text-primary text-xl font-bold my-3">฿48,900</p>
+      <div class="mb-4"><span class="block text-sm font-bold mb-2">สี</span><div class="flex gap-3 colors"><button type="button" data-color="ชมพู" class="color w-8 h-8 rounded-full bg-primary-container" aria-label="สีชมพู"></button><button type="button" data-color="น้ำตาล" class="color w-8 h-8 rounded-full bg-secondary-container" aria-label="สีน้ำตาล"></button><button type="button" data-color="ครีม" class="color w-8 h-8 rounded-full bg-surface-container-highest border selected" aria-label="สีครีม"></button></div></div>
+      <div class="mb-5"><span class="block text-sm font-bold mb-2">ความจุ</span><div class="flex gap-2 flex-wrap storage"><button type="button" data-storage="128GB" class="storage-btn px-4 py-2 rounded-full bg-surface-container-high">128GB</button><button type="button" data-storage="256GB" class="storage-btn px-4 py-2 rounded-full bg-surface-container-high">256GB</button><button type="button" data-storage="512GB" class="storage-btn px-4 py-2 rounded-full bg-surface-container-high border border-primary selected">512GB</button></div></div>
+      <button onclick="addFromCard(this)" class="mt-auto w-full bg-primary text-white font-bold py-4 rounded-full hover:opacity-90 active:scale-95 transition">ซื้อเลย</button>
+    </article>
+  </section>
+
+  <section id="contact" class="mt-16 bg-primary-container/40 rounded-2xl p-8 text-center"><h2 class="font-headline text-2xl font-bold mb-2">ติดต่อ Baitoey Phone</h2><p class="text-on-surface-variant">สอบถามสินค้าและบริการได้ทุกวัน เวลา 09:00–18:00 น.</p><p class="mt-2 font-bold text-primary">โทร. 08X-XXX-XXXX</p></section>
+</main>
+
+<div id="overlay" onclick="closeCart()" class="fixed inset-0 bg-black/30 z-[60] hidden"></div>
+<aside id="cartDrawer" class="drawer fixed top-0 right-0 z-[70] h-full w-full max-w-md bg-white shadow-2xl translate-x-full flex flex-col">
+  <div class="p-5 border-b flex items-center justify-between"><h2 class="font-headline text-2xl font-bold">ตะกร้าสินค้า</h2><button onclick="closeCart()" class="text-2xl">×</button></div>
+  <div id="cartItems" class="flex-1 overflow-y-auto p-5 space-y-4"></div>
+  <div class="p-5 border-t bg-surface"><div class="flex justify-between font-bold text-lg mb-4"><span>รวมทั้งหมด</span><span id="cartTotal">฿0</span></div><button onclick="checkout()" class="w-full bg-primary text-white font-bold py-4 rounded-full">ดำเนินการสั่งซื้อ</button></div>
+</aside>
+
+<nav class="fixed bottom-0 md:hidden z-50 w-full h-16 bg-white/90 glass shadow-[0_-4px_20px_rgba(124,87,48,.08)] flex justify-around items-center"><a href="#home" class="text-xs font-bold">หน้าแรก</a><a href="#products" class="text-xs font-bold text-primary">สินค้า</a><button onclick="openCart()" class="text-xs font-bold text-primary">ตะกร้า (<span id="mobileCount">0</span>)</button><a href="#contact" class="text-xs font-bold">ติดต่อ</a></nav>
+<div id="toast" class="fixed bottom-24 md:bottom-6 left-1/2 -translate-x-1/2 hidden bg-on-surface text-white px-5 py-3 rounded-full shadow-lg z-[100]"></div>
+
+<script>
+let cart=[];
+const money=n=>'฿'+n.toLocaleString('th-TH');
+function updateCounts(){const n=cart.reduce((s,i)=>s+i.qty,0);document.getElementById('cartCount').textContent=n;document.getElementById('mobileCount').textContent=n;}
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.remove('hidden');t.classList.add('toast');setTimeout(()=>t.classList.add('hidden'),1800);}
+function addFromCard(btn){const card=btn.closest('[data-product]');const product=card.dataset.product,price=Number(card.dataset.price);const color=card.querySelector('.color.selected')?.dataset.color||'ชมพู';const storage=card.querySelector('.storage-btn.selected')?.dataset.storage||'128GB';const key=product+'-'+color+'-'+storage;const old=cart.find(i=>i.key===key);if(old)old.qty++;else cart.push({key,product,price,color,storage,qty:1});updateCounts();renderCart();showToast('เพิ่ม '+product+' ลงตะกร้าแล้ว ✓');}
+function renderCart(){const box=document.getElementById('cartItems');if(!cart.length){box.innerHTML='<div class="text-center text-on-surface-variant py-16"><span class="material-symbols-outlined text-5xl">shopping_cart</span><p class="mt-3">ยังไม่มีสินค้าในตะกร้า</p></div>';document.getElementById('cartTotal').textContent='฿0';return;}box.innerHTML=cart.map((i,idx)=>`<div class="rounded-xl bg-surface-container-low p-4"><div class="flex justify-between gap-3"><div><h3 class="font-bold">${i.product}</h3><p class="text-sm text-on-surface-variant">สี${i.color} • ${i.storage}</p><p class="text-primary font-bold mt-1">${money(i.price)}</p></div><button onclick="removeItem(${idx})" class="text-red-500">ลบ</button></div><div class="flex items-center gap-3 mt-3"><button onclick="changeQty(${idx},-1)" class="w-8 h-8 rounded-full bg-white">−</button><span class="font-bold">${i.qty}</span><button onclick="changeQty(${idx},1)" class="w-8 h-8 rounded-full bg-white">+</button><span class="ml-auto font-bold">${money(i.price*i.qty)}</span></div></div>`).join('');document.getElementById('cartTotal').textContent=money(cart.reduce((s,i)=>s+i.price*i.qty,0));}
+function changeQty(i,d){cart[i].qty+=d;if(cart[i].qty<=0)cart.splice(i,1);updateCounts();renderCart();}
+function removeItem(i){cart.splice(i,1);updateCounts();renderCart();}
+function openCart(){document.getElementById('overlay').classList.remove('hidden');document.getElementById('cartDrawer').classList.remove('translate-x-full');renderCart();}
+function closeCart(){document.getElementById('overlay').classList.add('hidden');document.getElementById('cartDrawer').classList.add('translate-x-full');}
+function checkout(){if(!cart.length){showToast('กรุณาเลือกสินค้าก่อนสั่งซื้อ');return;}alert('ขอบคุณสำหรับการสั่งซื้อ!\nระบบตัวอย่างนี้ยังไม่ได้เชื่อมต่อการชำระเงินจริง');}
+document.querySelectorAll('.colors').forEach(group=>group.querySelectorAll('.color').forEach(b=>b.addEventListener('click',()=>{group.querySelectorAll('.color').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');})));
+document.querySelectorAll('.storage').forEach(group=>group.querySelectorAll('.storage-btn').forEach(b=>b.addEventListener('click',()=>{group.querySelectorAll('.storage-btn').forEach(x=>x.classList.remove('selected','border-primary'));b.classList.add('selected','border-primary');})));
+updateCounts();renderCart();
+</script>
+</body></html>
