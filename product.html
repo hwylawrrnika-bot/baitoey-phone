@@ -21,33 +21,31 @@
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(139, 83, 96, 0.12);
+      transform: translateY(-6px);
+      box-shadow: 0 15px 30px rgba(139, 83, 96, 0.15);
     }
   </style>
 </head>
 
 <body class="text-gray-800">
 
-  <!-- เมนูด้านบน -->
-  <header class="bg-white border-b sticky top-0 z-50">
-
-    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+  <!-- Navigation -->
+  <header class="bg-white shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
 
       <a href="index.html"
          class="text-2xl font-bold text-[#8b5360]">
         Baitoey Phone
       </a>
 
-      <nav class="flex gap-6 md:gap-8 font-medium">
-
+      <nav class="flex gap-8 font-semibold">
         <a href="index.html"
            class="hover:text-[#8b5360]">
           หน้าแรก
         </a>
 
         <a href="product.html"
-           class="text-[#8b5360] font-bold">
+           class="text-[#8b5360]">
           สินค้า
         </a>
 
@@ -55,45 +53,44 @@
            class="hover:text-[#8b5360]">
           ติดต่อ
         </a>
-
       </nav>
 
     </div>
-
   </header>
 
 
-  <!-- เนื้อหาหน้าสินค้า -->
-  <main class="max-w-6xl mx-auto px-6 py-12">
+  <!-- Hero -->
+  <section class="text-center py-16 px-6">
 
-    <div class="text-center mb-10">
+    <p class="text-[#8b5360] font-semibold tracking-widest">
+      BAITOЕY PHONE STORE
+    </p>
 
-      <p class="text-[#8b5360] font-semibold tracking-widest">
-        BAITOEY PHONE STORE
-      </p>
+    <h1 class="text-4xl md:text-5xl font-bold mt-3">
+      สินค้าของเรา
+    </h1>
 
-      <h1 class="text-4xl font-bold mt-2">
-        สินค้าของเรา
-      </h1>
+    <p class="text-gray-500 mt-4">
+      เลือก iPhone รุ่นที่คุณชื่นชอบ
+    </p>
 
-      <p class="text-gray-500 mt-3">
-        เลือก iPhone รุ่นที่คุณชื่นชอบ
-      </p>
-
-    </div>
+  </section>
 
 
-    <!-- รายการสินค้า -->
-    <div class="grid md:grid-cols-3 gap-8">
+  <!-- Products -->
+  <section class="max-w-6xl mx-auto px-6 pb-20">
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
 
       <!-- iPhone 18 -->
       <div class="card bg-white rounded-3xl p-5 shadow-sm">
 
         <img
-          src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=800&q=80"
+          src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=800&q=80"
           alt="iPhone 18"
-          class="w-full h-64 object-cover rounded-2xl">
+          class="w-full h-64 object-cover rounded-2xl"
+        >
 
         <h2 class="text-2xl font-bold mt-5">
           iPhone 18
@@ -108,8 +105,8 @@
         </p>
 
         <button
-          onclick="order('iPhone 18')"
-          class="w-full mt-5 bg-[#8b5360] text-white py-3 rounded-xl hover:opacity-90">
+          onclick="orderProduct('iPhone 18')"
+          class="w-full mt-5 bg-[#8b5360] text-white py-3 rounded-xl font-semibold hover:bg-[#70414d]">
           สั่งซื้อ
         </button>
 
@@ -120,9 +117,10 @@
       <div class="card bg-white rounded-3xl p-5 shadow-sm">
 
         <img
-          src="https://images.unsplash.com/photo-1592286927505-2fd7c7b4f7c2?auto=format&fit=crop&w=800&q=80"
+          src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=800&q=80"
           alt="iPhone 18 Pro"
-          class="w-full h-64 object-cover rounded-2xl">
+          class="w-full h-64 object-cover rounded-2xl"
+        >
 
         <h2 class="text-2xl font-bold mt-5">
           iPhone 18 Pro
@@ -137,8 +135,8 @@
         </p>
 
         <button
-          onclick="order('iPhone 18 Pro')"
-          class="w-full mt-5 bg-[#8b5360] text-white py-3 rounded-xl hover:opacity-90">
+          onclick="orderProduct('iPhone 18 Pro')"
+          class="w-full mt-5 bg-[#8b5360] text-white py-3 rounded-xl font-semibold hover:bg-[#70414d]">
           สั่งซื้อ
         </button>
 
@@ -149,9 +147,10 @@
       <div class="card bg-white rounded-3xl p-5 shadow-sm">
 
         <img
-          src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=800&q=80"
+          src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?auto=format&fit=crop&w=800&q=80"
           alt="iPhone 18 Pro Max"
-          class="w-full h-64 object-cover rounded-2xl">
+          class="w-full h-64 object-cover rounded-2xl"
+        >
 
         <h2 class="text-2xl font-bold mt-5">
           iPhone 18 Pro Max
@@ -166,8 +165,8 @@
         </p>
 
         <button
-          onclick="order('iPhone 18 Pro Max')"
-          class="w-full mt-5 bg-[#8b5360] text-white py-3 rounded-xl hover:opacity-90">
+          onclick="orderProduct('iPhone 18 Pro Max')"
+          class="w-full mt-5 bg-[#8b5360] text-white py-3 rounded-xl font-semibold hover:bg-[#70414d]">
           สั่งซื้อ
         </button>
 
@@ -175,24 +174,57 @@
 
     </div>
 
-  </main>
+  </section>
 
 
-  <!-- ส่วนท้าย -->
-  <footer class="bg-white border-t text-center py-6 mt-10">
+  <!-- Promotion -->
+  <section class="bg-[#f5e5e8] py-14 px-6">
 
-    <p class="text-gray-500">
+    <div class="max-w-4xl mx-auto text-center">
+
+      <h2 class="text-3xl font-bold text-[#8b5360]">
+        🎉 โปรโมชั่นพิเศษ
+      </h2>
+
+      <p class="text-gray-700 mt-4 text-lg">
+        ซื้อโทรศัพท์มือถือกับ Baitoey Phone
+        รับโปรโมชั่นและบริการสุดพิเศษ
+      </p>
+
+      <p class="mt-3 font-semibold">
+        ผ่อนสบาย • ราคาพิเศษ • บริการหลังการขาย
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="bg-white border-t py-8 text-center">
+
+    <p class="font-bold text-[#8b5360]">
+      Baitoey Phone
+    </p>
+
+    <p class="text-gray-500 text-sm mt-2">
+      ร้านโทรศัพท์มือถือ พร้อมให้บริการคุณ
+    </p>
+
+    <p class="text-gray-400 text-sm mt-2">
       © 2026 Baitoey Phone
     </p>
 
   </footer>
 
 
+  <!-- JavaScript -->
   <script>
-    function order(product) {
+    function orderProduct(productName) {
       alert(
-        "คุณเลือก " + product +
-        "\n\nกรุณาติดต่อ Baitoey Phone เพื่อดำเนินการสั่งซื้อค่ะ"
+        "ขอบคุณที่สนใจ " +
+        productName +
+        "\\nกรุณาติดต่อ Baitoey Phone เพื่อสั่งซื้อค่ะ"
       );
     }
   </script>
