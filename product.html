@@ -6,7 +6,6 @@
     <title>Baitoey Phone - สินค้า</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -14,17 +13,14 @@
             font-family: 'Prompt', sans-serif;
             background: #fcf9f8;
         }
-
         .card {
             transition: 0.25s;
         }
-
         .card:hover {
             transform: translateY(-6px);
             box-shadow: 0 15px 30px rgba(139, 83, 96, 0.15);
         }
-
-        .color-select {
+        .custom-select {
             appearance: none;
             background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
             background-repeat: no-repeat;
@@ -34,10 +30,14 @@
     </style>
 
     <script>
-        function orderProduct(productName, price, selectId) {
-            const colorSelect = document.getElementById(selectId);
+        function orderProduct(productName, price, colorId, gbId) {
+            const colorSelect = document.getElementById(colorId);
+            const gbSelect = document.getElementById(gbId);
+            
             const selectedColor = colorSelect.value;
-            const message = `สวัสดีค่ะ สนใจสั่งซื้อสินค้า:\n- สินค้า: ${productName}\n- สี: ${selectedColor}\n- ราคา: ฿${price} บาท\n\nขอสั่งซื้อค่ะ`;
+            const selectedGb = gbSelect.value;
+            
+            const message = `สวัสดีค่ะ สนใจสั่งซื้อสินค้า:\n- สินค้า: ${productName}\n- ความจุ: ${selectedGb}\n- สี: ${selectedColor}\n- ราคาเริ่มต้น: ฿${price} บาท\n\nขอสั่งซื้อค่ะ`;
             const encodedMessage = encodeURIComponent(message);
             window.open(`https://line.me/R/msg/text/?${encodedMessage}`, '_blank');
         }
@@ -61,7 +61,7 @@
     <main class="max-w-6xl mx-auto px-6 pt-32 pb-20 text-center">
         <p class="text-xs font-bold tracking-widest text-[#8b5360] uppercase mb-2">BAITOEY PHONE STORE</p>
         <h1 class="text-3xl font-bold text-[#8b5360] mb-2">สินค้าของเรา</h1>
-        <p class="text-gray-600 mb-12">เลือก iPhone รุ่นที่คุณชื่นชอบ</p>
+        <p class="text-gray-600 mb-12">เลือก iPhone รุ่นที่คุณชื่นชอบและความจุที่ต้องการ</p>
 
         <!-- Product Grid -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
@@ -73,9 +73,20 @@
                     <h3 class="text-xl font-bold text-[#8b5360] mb-1">iPhone 18</h3>
                     <p class="text-gray-600 text-sm mb-4">รุ่นใหม่ ดีไซน์สวยทันสมัย</p>
                     
+                    <!-- เลือกความจุ GB -->
+                    <div class="mb-3">
+                        <label class="block text-xs font-bold text-gray-700 mb-1">ความจุ (GB):</label>
+                        <select id="gb-ip18" class="custom-select w-full p-2.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:outline-none focus:border-[#8b5360]">
+                            <option value="128 GB">128 GB</option>
+                            <option value="256 GB">256 GB</option>
+                            <option value="512 GB">512 GB</option>
+                        </select>
+                    </div>
+
+                    <!-- เลือกสี -->
                     <div class="mb-4">
-                        <label class="block text-sm font-bold text-gray-700 mb-1.5">เลือกสี:</label>
-                        <select id="color-ip18" class="color-select w-full p-2.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:outline-none focus:border-[#8b5360]">
+                        <label class="block text-xs font-bold text-gray-700 mb-1">เลือกสี:</label>
+                        <select id="color-ip18" class="custom-select w-full p-2.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:outline-none focus:border-[#8b5360]">
                             <option value="สีดำ (Space Black)">สีดำ (Space Black)</option>
                             <option value="สีขาว (Silver White)">สีขาว (Silver White)</option>
                             <option value="สีชมพู (Rose Pink)">สีชมพู (Rose Pink)</option>
@@ -84,8 +95,8 @@
                 </div>
 
                 <div>
-                    <div class="text-lg font-bold text-[#8b5360] mb-4">฿29,900</div>
-                    <button onclick="orderProduct('iPhone 18', '29,900', 'color-ip18')" 
+                    <div class="text-lg font-bold text-[#8b5360] mb-4">เริ่มต้น ฿29,900</div>
+                    <button onclick="orderProduct('iPhone 18', '29,900', 'color-ip18', 'gb-ip18')" 
                             class="w-full bg-[#8b5360] hover:bg-[#73424e] text-white py-2.5 rounded-xl font-bold transition shadow-sm text-center">
                         สั่งซื้อ
                     </button>
@@ -99,9 +110,20 @@
                     <h3 class="text-xl font-bold text-[#8b5360] mb-1">iPhone 18 Pro</h3>
                     <p class="text-gray-600 text-sm mb-4">ประสิทธิภาพระดับมืออาชีพ</p>
                     
+                    <!-- เลือกความจุ GB -->
+                    <div class="mb-3">
+                        <label class="block text-xs font-bold text-gray-700 mb-1">ความจุ (GB):</label>
+                        <select id="gb-ip18pro" class="custom-select w-full p-2.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:outline-none focus:border-[#8b5360]">
+                            <option value="256 GB">256 GB</option>
+                            <option value="512 GB">512 GB</option>
+                            <option value="1 TB">1 TB</option>
+                        </select>
+                    </div>
+
+                    <!-- เลือกสี -->
                     <div class="mb-4">
-                        <label class="block text-sm font-bold text-gray-700 mb-1.5">เลือกสี:</label>
-                        <select id="color-ip18pro" class="color-select w-full p-2.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:outline-none focus:border-[#8b5360]">
+                        <label class="block text-xs font-bold text-gray-700 mb-1">เลือกสี:</label>
+                        <select id="color-ip18pro" class="custom-select w-full p-2.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:outline-none focus:border-[#8b5360]">
                             <option value="สีไทเทเนียมดำ (Black Titanium)">สีไทเทเนียมดำ (Black Titanium)</option>
                             <option value="สีไทเทเนียมธรรมชาติ (Natural Titanium)">สีไทเทเนียมธรรมชาติ (Natural Titanium)</option>
                             <option value="สีไทเทเนียมขาว (White Titanium)">สีไทเทเนียมขาว (White Titanium)</option>
@@ -110,8 +132,8 @@
                 </div>
 
                 <div>
-                    <div class="text-lg font-bold text-[#8b5360] mb-4">฿39,900</div>
-                    <button onclick="orderProduct('iPhone 18 Pro', '39,900', 'color-ip18pro')" 
+                    <div class="text-lg font-bold text-[#8b5360] mb-4">เริ่มต้น ฿39,900</div>
+                    <button onclick="orderProduct('iPhone 18 Pro', '39,900', 'color-ip18pro', 'gb-ip18pro')" 
                             class="w-full bg-[#8b5360] hover:bg-[#73424e] text-white py-2.5 rounded-xl font-bold transition shadow-sm text-center">
                         สั่งซื้อ
                     </button>
@@ -125,9 +147,20 @@
                     <h3 class="text-xl font-bold text-[#8b5360] mb-1">iPhone 18 Pro Max</h3>
                     <p class="text-gray-600 text-sm mb-4">หน้าจอใหญ่ พร้อมกล้องคุณภาพสูง</p>
                     
+                    <!-- เลือกความจุ GB -->
+                    <div class="mb-3">
+                        <label class="block text-xs font-bold text-gray-700 mb-1">ความจุ (GB):</label>
+                        <select id="gb-ip18promax" class="custom-select w-full p-2.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:outline-none focus:border-[#8b5360]">
+                            <option value="256 GB">256 GB</option>
+                            <option value="512 GB">512 GB</option>
+                            <option value="1 TB">1 TB</option>
+                        </select>
+                    </div>
+
+                    <!-- เลือกสี -->
                     <div class="mb-4">
-                        <label class="block text-sm font-bold text-gray-700 mb-1.5">เลือกสี:</label>
-                        <select id="color-ip18promax" class="color-select w-full p-2.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:outline-none focus:border-[#8b5360]">
+                        <label class="block text-xs font-bold text-gray-700 mb-1">เลือกสี:</label>
+                        <select id="color-ip18promax" class="custom-select w-full p-2.5 border border-gray-200 rounded-xl text-sm bg-gray-50 focus:outline-none focus:border-[#8b5360]">
                             <option value="สีไทเทเนียมดำ (Black Titanium)">สีไทเทเนียมดำ (Black Titanium)</option>
                             <option value="สีไทเทเนียมทะเลทราย (Desert Titanium)">สีไทเทเนียมทะเลทราย (Desert Titanium)</option>
                             <option value="สีไทเทเนียมเทา (Gray Titanium)">สีไทเทเนียมเทา (Gray Titanium)</option>
@@ -136,8 +169,8 @@
                 </div>
 
                 <div>
-                    <div class="text-lg font-bold text-[#8b5360] mb-4">฿44,900</div>
-                    <button onclick="orderProduct('iPhone 18 Pro Max', '44,900', 'color-ip18promax')" 
+                    <div class="text-lg font-bold text-[#8b5360] mb-4">เริ่มต้น ฿44,900</div>
+                    <button onclick="orderProduct('iPhone 18 Pro Max', '44,900', 'color-ip18promax', 'gb-ip18promax')" 
                             class="w-full bg-[#8b5360] hover:bg-[#73424e] text-white py-2.5 rounded-xl font-bold transition shadow-sm text-center">
                         สั่งซื้อ
                     </button>
